@@ -110,8 +110,6 @@ router.post("/login", async (req, res) => {
 // user valid
 router.get("/validuser",authenticate, async(req,res)=>{
   try {
-    console.log(req.headers);
-    console.log('hello');
       const ValidUserOne = await userdb.findOne({_id:req.userId});
       res.status(201).json({status:201,ValidUserOne});
   } catch (error) {
